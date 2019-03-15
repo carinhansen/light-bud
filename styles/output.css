@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+body {
+  background-color: #faebd6;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; }
+
+button {
+  background-color: lightgrey;
+  border-radius: 30px;
+  border: 0 solid;
+  font-size: 16px;
+  padding: 15px 25px; }
+
+.home-container {
+  height: 100vh; }
+
+.home-top-header {
+  background-image: url("http://images.lights.com/latest/37504/main/7.jpg");
+  background-size: cover;
+  height: 70vh;
+  position: absolute;
+  padding: 15px 30px;
+  width: 100vw; }
+
+.home-bottom-section {
+  bottom: 0;
+  position: absolute;
+  height: 30vh;
+  padding: 15px 30px;
+  background-color: antiquewhite;
+  width: 100vw; }
+  .home-bottom-section button {
+    margin: auto;
+    display: block;
+    outline: none; }
+  .home-bottom-section a {
+    text-decoration: none; }
+  .home-bottom-section p {
+    text-align: center; }
+
+/*# sourceMappingURL=output.css.map */
