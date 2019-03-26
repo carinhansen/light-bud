@@ -7,3 +7,14 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      padding: 10px;
+    }
+  }
+}
+
