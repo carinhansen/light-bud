@@ -2,12 +2,20 @@
 body {
   background-color: #faebd6;
   margin: 0;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
-nav ul {
+.main-navigation {
   list-style: none;
-  display: flex; }
-  nav ul li {
-    padding: 10px; }
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+.main-navigation__item {
+  padding: 10px;
+}
+.main-navigation__item:not(:last-child) {
+  border-right: 1px solid grey;
+}
 
 /*# sourceMappingURL=output.css.map */

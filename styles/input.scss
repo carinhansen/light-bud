@@ -7,14 +7,20 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-nav {
-  ul {
-    list-style: none;
-    display: flex;
+.main-navigation {
+  list-style: none;
+  display: flex;
+  background-color: white;
+  justify-content: center;
 
-    li {
-      padding: 10px;
+  &__item {
+    padding: 10px;
+
+    &:not(:last-child) {
+      border-right: 1px solid grey;
     }
+
   }
+
 }
 
