@@ -8,8 +8,6 @@ body {
 }
 
 nav {
-  border-bottom: 1px solid #f7f7f7;
-  margin-bottom: 30px;
   margin-top: 30px;
 }
 
@@ -17,28 +15,47 @@ nav {
   display: block;
   margin: auto;
   width: 1000px;
+  
+  img {
+    margin-left: 10px;
+  }
 }
 
 .main-navigation {
+  border-bottom: 1px solid #f7f7f7;
   background-color: white;
   display: flex;
   list-style: none;
   padding-left: 0;
+  margin: 0;
 
   &__item {
     padding: 10px;
     font-size: 14px;
     letter-spacing: 0.5px;
+    transition: border-bottom ease 0.2s;
+    cursor: pointer;
 
     &:hover {
-      border-bottom: 5px solid green;
+      border-bottom: 5px solid #00CC6D;
     }
 
-    //&:not(:last-child) {
-    //  border-right: 1px solid grey;
-    //}
+    &--active {
+      border-bottom: 5px solid #00AC5B;
+
+      &:hover {
+        border-bottom: 5px solid #00AC5B;
+      }
+
+    }
 
   }
 
+}
+
+.breadcrumbs {
+  margin: 10px 0 10px 10px;
+  font-size: 12px;
+  color: grey;
 }
 
