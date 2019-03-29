@@ -1,21 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 body {
-  background-color: #faebd6;
+  background-color: #fff;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-}
+  font-family: 'Open Sans', sans-serif; }
+
+nav {
+  border-bottom: 1px solid #f7f7f7;
+  margin-bottom: 30px;
+  margin-top: 30px; }
+
+.container {
+  display: block;
+  margin: auto;
+  width: 1000px; }
 
 .main-navigation {
-  list-style: none;
-  display: flex;
   background-color: white;
-  justify-content: center;
-}
-.main-navigation__item {
-  padding: 10px;
-}
-.main-navigation__item:not(:last-child) {
-  border-right: 1px solid grey;
-}
+  display: flex;
+  list-style: none;
+  padding-left: 0; }
+  .main-navigation__item {
+    padding: 10px;
+    font-size: 14px;
+    letter-spacing: 0.5px; }
+    .main-navigation__item:hover {
+      border-bottom: 5px solid green; }
 
 /*# sourceMappingURL=output.css.map */
