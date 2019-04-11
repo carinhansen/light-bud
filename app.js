@@ -1,3 +1,29 @@
+let light, police, userOne, userTwo;
+
+let lightButton = document.querySelector('.button__light');
+let policeButton = document.querySelector('.button__police');
+let userButton = document.querySelector('.button__user');
+let lightBox = document.querySelector('.button__yellow');
+let policeBox = document.querySelector('.button__blue');
+let userBox = document.querySelector('.button__green');
+lightBox.classList.toggle('button__yellow--clicked')
+
+lightButton.addEventListener('click', () => {
+  lightBox.classList.toggle('button__yellow--clicked')
+  light.setMap(light.getMap() ? null : map);
+});
+
+policeButton.addEventListener('click', () => {
+  policeBox.classList.toggle('button__blue--clicked')
+  police.setMap(police.getMap() ? null : map);
+});
+
+userButton.addEventListener('click', () => {
+  userBox.classList.toggle('button__green--clicked')
+  userOne.setMap(userOne.getMap() ? null : map);
+  userTwo.setMap(userTwo.getMap() ? null : map);
+});
+
 let map;
 
 function initMap() {
@@ -206,7 +232,9 @@ function initMap() {
     mapTypeId: 'terrain'
   });
 
-  let flightPlanCoordinates = [
+
+
+  const lightCoordinates = [
     {lat: 51.917918, lng: 4.487792},
     {lat: 51.917421, lng: 4.488038},
     {lat: 51.917698, lng: 4.489387},
@@ -223,10 +251,31 @@ function initMap() {
     {lat: 51.917122, lng: 4.483987},
     {lat: 51.918208, lng: 4.489325},
   ];
-  let flightPath = new google.maps.Polyline({
-    path: flightPlanCoordinates,
+
+  const policeCoordinates = [
+    {lat: 51.917128, lng: 4.483934},
+    {lat: 51.917369, lng: 4.485102},
+    {lat: 51.916793, lng: 4.485435},
+    {lat: 51.917233, lng: 4.487292},
+  ]
+
+  const userCoordinatesOne = [
+    {lat: 51.916223, lng: 4.483629},
+    {lat: 51.916477, lng: 4.483600},
+    {lat: 51.916868, lng: 4.485364},
+  ]
+
+  const userCoordinatesTwo = [
+    {lat: 51.917033, lng: 4.486416},
+    {lat: 51.917411, lng: 4.488046},
+    {lat: 51.917045, lng: 4.488256},
+    {lat: 51.916893, lng: 4.488375},
+  ]
+
+  light = new google.maps.Polyline({
+    path: lightCoordinates,
     geodesic: true,
-    strokeColor: '#FF0000',
+    strokeColor: '#FFFF00',
     strokeOpacity: 0.5,
     strokeWeight: 10
   });
@@ -234,5 +283,30 @@ function initMap() {
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
 
-  flightPath.setMap(map);
+  police = new google.maps.Polyline({
+    path: policeCoordinates,
+    geodesic: true,
+    strokeColor: '#0000FF',
+    strokeOpacity: 0.5,
+    strokeWeight: 10
+  });
+
+  userOne = new google.maps.Polyline({
+    path: userCoordinatesOne,
+    geodesic: true,
+    strokeColor: '#00FF00',
+    strokeOpacity: 0.5,
+    strokeWeight: 10
+  });
+
+  userTwo = new google.maps.Polyline({
+    path: userCoordinatesTwo,
+    geodesic: true,
+    strokeColor: '#00FF00',
+    strokeOpacity: 0.5,
+    strokeWeight: 10
+  });
+
+  light.setMap(map);
+
 }
