@@ -1,4 +1,4 @@
-let light, police, userOne, userTwo;
+let light, police, userOne, userTwo, marker;
 
 let lightButton = document.querySelector('.button__light');
 let policeButton = document.querySelector('.button__police');
@@ -305,6 +305,55 @@ function initMap() {
     strokeColor: '#00FF00',
     strokeOpacity: 0.5,
     strokeWeight: 10
+  });
+
+  const mark = {
+    url: 'images/marker-01.svg',
+    scaledSize: new google.maps.Size(550, 50),
+  };
+
+  google.maps.event.addListener(light, "click", function(event) {
+    if (marker) {
+      marker.setMap(null);
+    }
+    marker = new google.maps.Marker({
+      position: event.latLng,
+      icon: mark,
+      map: map
+    });
+  });
+
+  google.maps.event.addListener(police, "click", function(event) {
+    if (marker) {
+      marker.setMap(null);
+    }
+    marker = new google.maps.Marker({
+      position: event.latLng,
+      icon: mark,
+      map: map
+    });
+  });
+
+  google.maps.event.addListener(userOne, "click", function(event) {
+    if (marker) {
+      marker.setMap(null);
+    }
+    marker = new google.maps.Marker({
+      position: event.latLng,
+      icon: mark,
+      map: map
+    });
+  });
+
+  google.maps.event.addListener(userTwo, "click", function(event) {
+    if (marker) {
+      marker.setMap(null);
+    }
+    marker = new google.maps.Marker({
+      position: event.latLng,
+      icon: mark,
+      map: map
+    });
   });
 
   light.setMap(map);
