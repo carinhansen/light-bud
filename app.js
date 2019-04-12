@@ -312,6 +312,11 @@ function initMap() {
     scaledSize: new google.maps.Size(550, 50),
   };
 
+  const markPolice = {
+    url: 'images/marker-02.svg',
+    scaledSize: new google.maps.Size(550, 50),
+  };
+
   google.maps.event.addListener(light, "click", function(event) {
     if (marker) {
       marker.setMap(null);
@@ -329,7 +334,7 @@ function initMap() {
     }
     marker = new google.maps.Marker({
       position: event.latLng,
-      icon: mark,
+      icon: markPolice,
       map: map
     });
   });
